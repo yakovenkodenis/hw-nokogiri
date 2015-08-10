@@ -15,6 +15,9 @@ class TitlesScrapper
     @titles = []
   end
 
+  # Iterates over the array of urls
+  # and fills in the @titles array
+  # with web-pages' title tag content.
   def titles
     urls.each do |url|
       @titles << Nokogiri::HTML(open(url)).css('title')[0].text
